@@ -17,8 +17,8 @@ if exist "%LOCALAPPDATA%\GraphTerm\venv\Scripts\python.exe" (
 )
 where python >nul 2>nul || (
     echo [graphterm] ERROR: Python was not found on this system.
-    echo             Install Python 3.10+ from https://www.python.org/downloads/
-    echo             ^(check "Add python.exe to PATH" during install^).
+    echo             Install Python 3.11+ from https://www.python.org/downloads/
+    echo             ^("Add python.exe to PATH" during install^).
     exit /b 9009
 )
 for /f "delims=" %%P in ('where python') do (
@@ -26,7 +26,8 @@ for /f "delims=" %%P in ('where python') do (
 )
 
 :have_python
-"%GRAPHTERM_PYTHON%" -m graphrag_wrapper %*
+set "PYTHONPATH=%WRAP_DIR%%PYTHONPATH%"
+"%GRAPHTERM_PYTHON%" -m graphterm %*
 if errorlevel 1 (
     echo.
     echo [graphterm] Wrapper exited with code %ERRORLEVEL%.
