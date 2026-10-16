@@ -51,7 +51,7 @@ dev = [
 package = false
 
 [tool.uv.workspace]
-members = ["packages/*"]
+members = ["packages/*", "windows-wrapper"]
 
 [tool.uv.sources]
 graphrag-chunking = { workspace = true }
@@ -61,6 +61,7 @@ graphrag-storage = { workspace = true }
 graphrag-cache = { workspace = true }
 graphrag-vectors = { workspace = true }
 graphrag-llm = { workspace = true }
+graphterm = { workspace = true }
 
 # Keep poethepoet for task management to minimize changes
 [tool.poe.tasks]
