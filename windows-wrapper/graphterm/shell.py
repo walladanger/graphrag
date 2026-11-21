@@ -48,7 +48,7 @@ Built-in commands:
   exit / quit          Leave GraphTerm.
 
 Anything else is forwarded to the GraphRAG CLI, e.g.:
-  init --project ./myproj
+  init --project ./my_project
   index -v
   query "who are the main characters?" --method global
   prompt-tune -o entity_knowledge
@@ -151,7 +151,7 @@ def find_project_root(start: Path) -> Path | None:
 
 
 def split_line(line: str, io: Io | None = None) -> list[str]:
-    """Tokenise a shell line the way CMD would (quotes preserved, then stripped)."""
+    """Tokenize a shell line the way CMD would (quotes preserved, then stripped)."""
     try:
         return [strip_quotes(t) for t in shlex.split(line, posix=False)]
     except ValueError as e:
@@ -202,8 +202,8 @@ def cmd_status(io: Io, _: list[str]) -> int:
     else:
         io.write("[graphterm] No GraphRAG project here. Run: newproject <name>")
     io.write(f"[graphterm] GraphRAG CLI        : {' '.join(graphrag_cmd())}")
-    pyver = ".".join(map(str, sys.version_info[:3]))
-    io.write(f"[graphterm] Python              : {sys.executable} ({pyver})")
+    python_version = ".".join(map(str, sys.version_info[:3]))
+    io.write(f"[graphterm] Python              : {sys.executable} ({python_version})")
     return 0
 
 
