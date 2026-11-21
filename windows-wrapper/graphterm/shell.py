@@ -219,7 +219,7 @@ def cmd_newproject(io: Io, args: list[str]) -> int:
         return 1
     target.mkdir(parents=True)
     io.write(f"[graphterm] Created project folder '{name}'. Running graphrag init...")
-    return run_graphrag(["init", "--project", str(target)], io)
+return run_graphrag(["init", "--root", str(target)], io)
 
 
 def _cmd_help(io: Io, _: list[str]) -> int:
