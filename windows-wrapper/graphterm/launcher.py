@@ -1,10 +1,6 @@
 # Copyright (c) 2024 Microsoft Corporation.
 # Licensed under the MIT License
 
-# ruff: file-ignore[print, start-process-with-a-shell, start-process-with-partial-path, subprocess-without-shell-equals-true, suspicious-subprocess-import]
-
-
-
 """GraphTerm desktop launcher for Windows 11.
 
 This is the executable backing the Start-menu / desktop shortcut. Its jobs:

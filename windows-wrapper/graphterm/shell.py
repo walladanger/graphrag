@@ -1,10 +1,6 @@
 # Copyright (c) 2024 Microsoft Corporation.
 # Licensed under the MIT License
 
-# ruff: file-ignore[print, start-process-with-a-shell, start-process-with-partial-path, subprocess-without-shell-equals-true, suspicious-subprocess-import]
-
-
-
 """Core logic for the GraphTerm wrapper shell, importable and unit-testable.
 
 All console I/O goes through an injectable :class:`Io` object so the shell can
