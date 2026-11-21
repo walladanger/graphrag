@@ -1,0 +1,24 @@
+# Copyright (c) 2024 Microsoft Corporation.
+# Licensed under the MIT License
+
+[project]
+name = "graphterm"
+version = "1.0.0"
+description = "GraphTerm: a Windows wrapper shell and installable desktop app for the GraphRAG CLI."
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "graphrag",
+]
+
+[project.scripts]
+graphterm = "graphterm.shell:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["graphterm"]
+
+[tool.uv.sources]
+graphrag = { workspace = true }
