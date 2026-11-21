@@ -147,7 +147,7 @@ def main() -> int:
     ):
         return 0
 
-    launch_console(cmd_bat, python_exe)
+launch_console(cmd_bat, python_exe if env_ok else None)
     return 0
 
 
