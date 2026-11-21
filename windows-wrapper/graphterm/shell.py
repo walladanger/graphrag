@@ -90,10 +90,6 @@ def _default_clear() -> None:
 
 def graphrag_cmd() -> list[str]:
     """Return the base command vector used to invoke the GraphRAG CLI."""
-    exe = shutil.which("graphrag")
-    if exe:
-        return [exe]
-    # Fall back to `python -m graphrag` inside the current interpreter.
     return [sys.executable, "-m", "graphrag"]
 
 
